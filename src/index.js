@@ -43,6 +43,7 @@ generateIndexContent();
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const page = e.currentTarget.dataset.page;
+    clearContent();
     pages[page]();
   });
 });
