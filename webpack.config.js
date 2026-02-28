@@ -3,9 +3,9 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
   mode: "development",
-  entry: "./src/main.js",
+  entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    filename: "index.js",
     path: path.resolve(import.meta.dirname, "dist"),
     clean: true,
   },
@@ -23,6 +23,10 @@ export default {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
     ],
