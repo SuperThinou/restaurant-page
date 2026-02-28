@@ -33,7 +33,7 @@ const clearContent = function () {
   contentDiv.innerHTML = "";
 };
 
-// generateIndexContent();
+generateIndexContent();
 
 const pages = {
   home: generateIndexContent,

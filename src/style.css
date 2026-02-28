@@ -248,7 +248,7 @@ cite {
   width: 100%;
   display: block;
   will-change: transform;
-  transition: transform 0.15s ease-out;
+  transition: transform 0.2s ease-out;
   transform-style: preserve-3d;
   border-radius: 10px;
 }

@@ -1,17 +1,52 @@
-import { contentDiv } from ".";
+import { contentDiv } from "./index";
+import boeufWagyu from "./img/boeuf-wagyu.jpg";
+import tomahawk from "./img/tomahawk.jpg";
 
 export const generateMenuContent = function () {
-  const merde = document.createElement("h2");
-  merde.textContent = "PISSSSSSE";
-  contentDiv.append(merde);
+  cards.forEach((data) => {
+    const card = createCard(data);
+    contentDiv.appendChild(card);
+  });
 };
 
+function createCard({ imgSrc, title, description }) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  const img = document.createElement("img");
+  img.src = imgSrc;
+  img.classList.add("menu-el");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = title;
+  h2.classList.add("menu-title");
+
+  const p = document.createElement("p");
+  p.textContent = description;
+  p.classList.add("menu-text");
+
+  card.append(img, h2, p);
+
+  apply3DEffect(img);
+
+  return card;
+}
+
+const cards = [
+  {
+    imgSrc: boeufWagyu,
+    title: "Boeuf Wagyu",
+    description: "Rangers Valley, Australia",
+  },
+  {
+    imgSrc: tomahawk,
+    title: "Tomahawk",
+    description: "± 1.4kg for 2/3, 490€",
+  },
+];
+
 // 3D Effect
-const cards = document.querySelectorAll(".card");
-
-cards.forEach((card) => {
-  const menuEl = card.querySelector(".menu-el");
-
+function apply3DEffect(card) {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
 
@@ -21,13 +56,13 @@ cards.forEach((card) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = -(y - centerY) / 15;
-    const rotateY = (x - centerX) / 15;
+    const rotateX = -(y - centerY) / 20;
+    const rotateY = (x - centerX) / 20;
 
-    menuEl.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
   card.addEventListener("mouseleave", () => {
-    menuEl.style.transform = "rotateX(0deg) rotateY(0deg)";
+    card.style.transform = "rotateX(0deg) rotateY(0deg)";
   });
-});
+}
