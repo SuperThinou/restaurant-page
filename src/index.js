@@ -3,12 +3,7 @@ import { generateMenuContent } from "./menu";
 import { generateAboutContent } from "./about";
 
 const buttons = document.querySelectorAll("button");
-const contentDiv = document.getElementById("content");
-const pages = {
-  home: generateIndexContent,
-  menu: generateMenuContent,
-  about: generateAboutContent,
-};
+export const contentDiv = document.getElementById("content");
 
 const generateIndexContent = function () {
   // Hero
@@ -38,8 +33,13 @@ const clearContent = function () {
   contentDiv.innerHTML = "";
 };
 
-generateIndexContent();
+// generateIndexContent();
 
+const pages = {
+  home: generateIndexContent,
+  menu: generateMenuContent,
+  about: generateAboutContent,
+};
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const page = e.currentTarget.dataset.page;

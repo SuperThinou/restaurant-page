@@ -184,16 +184,23 @@ nav {
 
 .hero {
   height: 80vh;
+  width: 100%;
   background: url('img/restaurant.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .presentation {
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -206,6 +213,7 @@ nav {
 
 .testimony {
   height: 100vh;
+  width: 100%;
   font-family: PT-Serif;
   background: url('img/restaurant.jpg');
   background-size: cover;
@@ -216,7 +224,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 blockquote {
@@ -228,6 +235,32 @@ blockquote {
 cite {
   font-size: 2rem;
 }
+
+/* MENU PAGE */
+
+.card {
+  padding-top: 50px;
+  width: 400px;
+  perspective: 1000px;
+}
+
+.card .menu-el {
+  width: 100%;
+  display: block;
+  will-change: transform;
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+}
+
+.menu-title {
+  font-size: 2.5rem;
+}
+
+.menu-text {
+  font-style: italic;
+}
+
 
 /* Footer */
 
