@@ -5,11 +5,14 @@ export default {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "index.js",
+    filename: "main.js",
     path: path.resolve(import.meta.dirname, "dist"),
     clean: true,
   },
   devtool: "eval-source-map",
+  devServer: {
+    watchFiles: ["./src/template.html"],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
