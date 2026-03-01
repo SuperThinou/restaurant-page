@@ -18,10 +18,16 @@ export const generateAboutContent = function () {
   // Opening Hours table generation
   const table = document.createElement("table");
   const tbody = document.createElement("tbody");
+  const todayIndex = new Date().getDay();
 
-  openingHours.forEach(({ day, open, close }) => {
+  openingHours.forEach(({ day, open, close }, index) => {
     const tr = document.createElement("tr");
 
+    const adjustedIndex = todayIndex === 0 ? 6 : todayIndex - 1;
+
+    if (index === adjustedIndex) {
+      tr.classList.add("today");
+    }
     [day, open, close].forEach((text) => {
       const td = document.createElement("td");
       td.textContent = text;

@@ -274,8 +274,7 @@ td {
 
 .today {
   font-weight: bold;
-  background-color: #ff0000;
-  color: red;
+  background-color: rgb(70, 70, 70);
 }
 
 iframe {
