@@ -261,6 +261,28 @@ cite {
   font-style: italic;
 }
 
+/* ABOUT Page */
+
+table {
+  padding-bottom: 30px;
+}
+
+td {
+  padding: 10px;
+}
+
+.today {
+  font-weight: bold;
+  background-color: #ff0000;
+  color: red;
+}
+
+iframe {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+}
 
 /* Footer */
 
